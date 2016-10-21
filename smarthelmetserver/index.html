@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Socket</title>
+    <script type="text/javascript" src="http://59.108.126.38:8000/socket.io/socket.io.js"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+      var socket = io.connect('http://59.108.126.38:8000');
+      socket.on('Send Loc', function (data) {
+        alert(data.GPSTime);
+        socket.emit('GPS LOC',{alt:'102.123',ult:'235.201'});
+      });
+    </script>
+    
+</body>
+</html>
